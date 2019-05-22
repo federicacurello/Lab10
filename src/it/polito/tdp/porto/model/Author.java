@@ -1,16 +1,21 @@
 package it.polito.tdp.porto.model;
 
-public class Author {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Author implements Comparable<Author>{
 
 	private int id;
 	private String lastname;
 	private String firstname;
+	private List<Paper> pubblicazioni;
 		
 	public Author(int id, String lastname, String firstname) {
 		super();
 		this.id = id;
 		this.lastname = lastname;
 		this.firstname = firstname;
+		pubblicazioni= new ArrayList<Paper>();
 	}
 
 	public int getId() {
@@ -69,5 +74,13 @@ public class Author {
 		return true;
 	}
 	
-	
+	public void aggiungiPaper(Paper p) {
+		pubblicazioni.add(p);
+	}
+
+	@Override
+	public int compareTo(Author altro) {
+		
+		return this.lastname.compareTo(altro.lastname);
+	}
 }

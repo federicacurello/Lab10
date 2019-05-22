@@ -1,5 +1,6 @@
 package it.polito.tdp.porto;
 	
+import it.polito.tdp.porto.model.Model;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -15,7 +16,7 @@ public class Main extends Application {
 			BorderPane root = (BorderPane) loader.load();
 			PortoController controller = loader.getController();
 
-			// set the model
+			controller.setModel(new Model());
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

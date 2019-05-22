@@ -7,7 +7,7 @@ public class Paper {
 	private String issn;
 	private String publication;
 	private String type;
-	private String types;
+	private String types; //codice univoco
 
 	public Paper(int eprintid, String title, String issn, String publication, String type, String types) {
 		this.eprintid = eprintid;
